@@ -1,18 +1,18 @@
 # !/usr/bin/env python 
 # -*- coding: utf-8 -*- 
 
-def mn(n):
-    if n == 1:  # если n = 1
+def multipliers(number):
+    if number == 1:  # если number = 1
         return [1]  # выводим 1
-    if n < 1 or not isinstance(n, int):  # если n отрицательная или не int
+    if number < 1 or not isinstance(number, int):  # если number отрицательная или не int
         raise TypeError  # выводим ошибку
     lst = []  # объявляем пустой список
     i = 2
-    while n != 1:
-        if n % i == 0:  # если n разделось на i нацело
-            n = n // i
+    while number != 1:
+        if number % i == 0:  # если number разделось на i нацело
+            number = number // i
             lst.append(i)  # добавляем i в список
             continue  # не увеличивая i возвражщаемся к началу цикла
         i += 1
     return lst
-print(mn(3579))
+print(multipliers(3579))
