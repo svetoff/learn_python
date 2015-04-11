@@ -15,4 +15,4 @@ def multipliers(number):
             continue  # не увеличивая i возвражщаемся к началу цикла
         i += 1
     return lst
-print(multipliers(3579))
+print(multipliers(200052131456))
