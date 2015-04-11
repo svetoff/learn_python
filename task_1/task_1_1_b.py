@@ -1,5 +1,5 @@
-# !/usr/bin/env python 
-# -*- coding: utf-8 -*- 
+# !/usr/bin/env python
+# -*- coding: utf-8 -*-
 import math  # подключаем библиотеку для работы sqrt
 
 
@@ -24,4 +24,4 @@ def equation(a, b, c):
 
         return 'Два корня x1 = %.2f, x2 = %.2f' % (x1, x2)
 
-print(equation(1, 22, 4))  # вводим коэффициенты a, b, c
+print(equation(2, 19, 35))  # вводим коэффициенты a, b, c

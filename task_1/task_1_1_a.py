@@ -1,5 +1,6 @@
-# !/usr/bin/env python 
-# -*- coding: utf-8 -*- 
+# !/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 
 def multipliers(number):
     if number == 1:  # если number = 1
@@ -15,4 +16,4 @@ def multipliers(number):
             continue  # не увеличивая i возвражщаемся к началу цикла
         i += 1
     return lst
-print(multipliers(200052131456))
+print(multipliers(30030))
