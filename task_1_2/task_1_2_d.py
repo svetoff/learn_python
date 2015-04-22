@@ -4,7 +4,7 @@ import random
 
 
 def mix_words(just_string):
-    just_string = just_string.split( )
+    just_string = just_string.split()
     random.shuffle(just_string)
     return just_string
 

@@ -22,12 +22,11 @@ def atm(summ):
                 j += 1
                 continue
             else:
-                j +=2
-
-        lst.append("{0} RUB - {1} pieces".format(bill[i], j))  # на кириллицу ругается :(
+                j += 2
+        # на кириллицу ругается :(
+        lst.append("{0} RUB - {1} pieces".format(bill[i], j))
         i += 1
         j = 0
 
     return lst
 print atm(287)
-

@@ -5,7 +5,7 @@
 def multipliers(number):
     if number == 1:  # если number = 1
         return [1]  # выводим 1
-    if number < 1 or not isinstance(number, int):  # если number отрицательная или не int
+    if number < 1 or not isinstance(number, int):
         raise TypeError  # выводим ошибку
     lst = []  # объявляем пустой список
     i = 2

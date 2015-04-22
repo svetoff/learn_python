@@ -4,7 +4,7 @@
 
 def find_letter(where, letter):
     if letter in where:
-        where = where.split( )
+        where = where.split()
         lst = []
         for word in where:
             if word[0].lower() == letter.lower():

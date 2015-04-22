@@ -21,4 +21,6 @@ def find_repeat(str):
     if not lst:
         return ('не найдено повторений')
     return lst
-print find_repeat(['bob', 'helly', [1, 2, 3], 'Bob', 'Alize', 'Ivan', 'helly', 'helly', '0.12', '0.12',[1, 2, 3]])
+print find_repeat([
+                    'bob', 'helly', [1, 2, 3], 'Bob', 'Alize', 'Ivan', 'helly',
+                    'helly', '0.12', '0.12', [1, 2, 3]])

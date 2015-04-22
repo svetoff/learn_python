@@ -13,11 +13,11 @@ def stat(specified_lst):
 
 # Получаем список с типами элементов заданного списка
     for char in specified_lst:
-       lst_type.append(char.__class__.__name__)
+        lst_type.append(char.__class__.__name__)
 
 # Берём элемент списка lst_type и считаем количество вхождений
     for char in lst_type:
-# Отбрасываем уже посчитанные типы
+        # Отбрасываем уже посчитанные типы
         if char in lst_type[0:i-1]:
             i += 1
             continue
@@ -26,17 +26,5 @@ def stat(specified_lst):
     return lst_count
 
 print stat([
-    'bob',
-    'helly',
-    [1, 2, 3],
-    'Bob',
-    'Alize',
-    'Ivan',
-    'helly',
-    'helly',
-    0.12,
-    0.156,
-    [1, 2, 3],
-    52,
-    19,
-    -25])
+    'bob', 'helly', [1, 2, 3], 'Bob', 'Alize', 'Ivan', 'helly', 'helly',
+    0.12, 0.156, [1, 2, 3], 52, 19, -25])
