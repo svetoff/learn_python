@@ -1,8 +1,8 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
+import math
 
 
-#   c. по примеру на lambda, nested function и closure. 
 #   d. снова, по примеру на *args, **kwargs, otional и named 
 #   e. декораторы 
 #       i. написать декоратор, показывающий время работы функции 
@@ -33,3 +33,22 @@ print res_1, res_2
 users = [user.rstrip() for user in open('users.csv') if user[0] == 'i']
 print users
 
+	#   c. пример на lambda 
+
+
+lst = [2, 18, 9, 22, 17, 24, 8, 12, 27]
+res_3 = filter(lambda x:x%2==0, lst)
+print res_3
+
+	# c. пример на nested function(вложенные функции) и на closure.
+
+
+def katet(z1):
+	def calc_hypotenuse(z2):
+		return math.sqrt(z1**2+z2**2)
+	return calc_hypotenuse
+mid_res = katet(10)
+hypotenuse = mid_res(23)
+print(hypotenuse)
+
+	
