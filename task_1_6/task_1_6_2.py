@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 
-#   b. пишем генератор. любой. чем интереснее, тем лучше) 
 #   c. по примеру на lambda, nested function и closure. 
 #   d. снова, по примеру на *args, **kwargs, otional и named 
 #   e. декораторы 
@@ -28,4 +27,9 @@ def multi(x1, x2):
 res_1, res_2 = multi(12,6)
 print res_1, res_2
 
+	#   b. генератор любой
+
+
+users = [user.rstrip() for user in open('users.csv') if user[0] == 'i']
+print users
 
