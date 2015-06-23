@@ -19,36 +19,39 @@ import math
 
 # 2. функции 
 
-	#   a. написать функцию, возвращающую несколько значений 
+#   a. написать функцию, возвращающую несколько значений 
 
 
 def multi(x1, x2):
-	return x1**3-x2, x2**2+x1
-res_1, res_2 = multi(12,6)
+    return x1**3-x2, x2**2+x1
+res_1, res_2 = multi(12, 6)
 print res_1, res_2
 
-	#   b. генератор любой
+#   b. генератор любой
 
 
-users = [user.rstrip() for user in open('users.csv') if user[0] == 'i']
-print users
+def anyGenerator():
+    list_users = open('users.csv')
+    for i in list_users:
+        yield 'Привет! ' + i.rstrip()
+myAnyGenerator = anyGenerator()
+for i in myAnyGenerator:
+    print i
 
-	#   c. пример на lambda 
+    #   c. пример на lambda 
 
 
 lst = [2, 18, 9, 22, 17, 24, 8, 12, 27]
-res_3 = filter(lambda x:x%2==0, lst)
+res_3 = filter(lambda x: x % 2 == 0, lst)
 print res_3
 
-	# c. пример на nested function(вложенные функции) и на closure.
+# c. пример на nested function(вложенные функции) и на closure.
 
 
 def katet(z1):
-	def calc_hypotenuse(z2):
-		return math.sqrt(z1**2+z2**2)
-	return calc_hypotenuse
+    def calc_hypotenuse(z2):
+        return math.sqrt(z1**2+z2**2)
+    return calc_hypotenuse
 mid_res = katet(10)
 hypotenuse = mid_res(23)
 print(hypotenuse)
-
-	
