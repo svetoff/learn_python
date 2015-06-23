@@ -3,7 +3,6 @@
 import math
 
 
-#   d. снова, по примеру на *args, **kwargs, otional и named 
 #   e. декораторы 
 #       i. написать декоратор, показывающий время работы функции 
 #       ii. декоратор, выводящий имя функции перед результатом ее 
@@ -30,12 +29,12 @@ print res_1, res_2
 #   b. генератор любой
 
 
-def anyGenerator():
+def any_generator():
     list_users = open('users.csv')
     for i in list_users:
         yield 'Привет! ' + i.rstrip()
-myAnyGenerator = anyGenerator()
-for i in myAnyGenerator:
+my_any_generator = any_generator()
+for i in my_any_generator:
     print i
 
     #   c. пример на lambda 
@@ -55,3 +54,31 @@ def katet(z1):
 mid_res = katet(10)
 hypotenuse = mid_res(23)
 print(hypotenuse)
+
+# d. снова, по примеру на *args, **kwargs, optional и named
+
+
+def test_args(arg1, arg2, arg3):
+    print "arg1:", arg1
+    print "arg2:", arg2
+    print "arg3:", arg3
+
+args = ("два", 3)
+test_args(1, *args)
+
+
+def test_kwargs(arg1, arg2, arg3):
+    print "arg1:", arg1
+    print "arg2:", arg2
+    print "arg3:", arg3
+
+kwargs = {"arg3": 3, "arg2": "два"}
+test_kwargs(1, **kwargs)
+
+
+def test_named(b=6, c=12):
+    print b, c
+
+test_named()
+test_named(9, 17)
+test_named(b=125, c=36)
