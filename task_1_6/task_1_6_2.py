@@ -1,17 +1,9 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 import math
+import time
+import os
 
-
-#   e. декораторы 
-#       i. написать декоратор, показывающий время работы функции 
-#       ii. декоратор, выводящий имя функции перед результатом ее 
-# работы 
-#       iii. Декоратор, запрещающий выполнение функции, если скрипт 
-# запущен не от указанного пользователя. 
-#       iv. Декоратор. Если функция вернула True, не делает ничего, если 
-# вернула строку, выбрасывает исключение, с этой строкой в 
-# качестве параметра.
 
 # comprehensions 
 # 3 примера list comprehensions, возвращающих итератор 
@@ -78,7 +70,77 @@ test_kwargs(1, **kwargs)
 
 def test_named(b=6, c=12):
     print b, c
+test_named()
+test_named(9, 17)
+test_named(b=125, c=36)
 
+
+#   e. декораторы 
+
+
+def name_func(func):
+    """
+    Декоратор выводящий имя
+    декорируемой функции
+    """
+    def wrapper(*args, **kwargs):
+        res = func(*args, **kwargs)
+        print func.__name__
+        return res
+    return wrapper
+
+
+@name_func
+def test_named(b=6, c=12):
+    print b, c
+test_named()
+test_named(9, 17)
+test_named(b=125, c=36)
+
+
+def time_func(func):
+    """
+    Декоратор, выводящий время, которое заняло
+    выполнение декорируемой функции.
+    """
+
+    def wrapper(*args, **kwargs):
+        t = time.clock()
+        res = func(*args, **kwargs)
+        print time.clock() - t
+        return res
+    return wrapper
+
+
+@time_func
+def test_named(b=6, c=12):
+    print b, c
+test_named()
+test_named(9, 17)
+test_named(b=125, c=36)
+
+
+def user_func(func):
+    """
+    Декоратор, запрещающий
+    выполнение декорируемой функции
+    если она запущена не от заданного пользователя.
+    """
+
+    def wrapper(*args, **kwargs):
+        user = os.getlogin()
+        if user == "vlad":
+            res = func(*args, **kwargs)
+            return res
+        else:
+            print "Запуск скрипта возможен только пользователем vlad"
+
+    return wrapper
+
+
+@user_func
+def test_named(b=6, c=12):
+    print b, c
 test_named()
 test_named(9, 17)
 test_named(b=125, c=36)
