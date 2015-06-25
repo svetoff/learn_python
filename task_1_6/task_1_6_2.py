@@ -144,3 +144,34 @@ def test_named(b=6, c=12):
 test_named()
 test_named(9, 17)
 test_named(b=125, c=36)
+
+
+
+"""Декоратор, ничего не делающий если функция True,
+и выводящий строку если  """
+
+
+class StringException(Exception):
+    def __init__(self):
+        Exception.__init__(self)
+
+
+def string_or_true(function):
+    def wrapper(*args, **kwargs):
+        type_of_func = function(*args, **kwargs).__class__
+        res = function(*args, **kwargs)
+        try:
+            if test_func is True:
+                pass
+            elif type_of_func is str:
+                raise StringException
+        except StringException:
+            print res
+    return wrapper
+
+
+@string_or_true
+def test_func(arg):
+    return arg
+
+test_func(True)
