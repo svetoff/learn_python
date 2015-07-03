@@ -43,7 +43,7 @@ class GeneratorHTML(object):
             while self.list_tags:
                 tag = self.list_tags.pop()
                 lst_temp = self.dict_tags[str(tag)]
-                output_file.writelines("{0}{1}\n".format(self.list_spase.pop(), lst_temp[0]))
+                output_file.writelines("{0}{1}\n".format(self.list_spase.pop(), lst_temp[1]))
 
 p = GeneratorHTML()
 p.open_file()
